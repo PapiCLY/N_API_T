@@ -1,11 +1,7 @@
-/*
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+
 
 (function($) {
-
+	document.getElementById('pod').addEventListener('click', getPOD)
 	var	$window = $(window),
 		$body = $('body'),
 		$wrapper = $('#wrapper'),
@@ -397,5 +393,27 @@
 					$window.on('load', function() {
 						$main._show(location.hash.substr(1), true);
 					});
-
+					
+					function getPOD(){
+						const choice = document.getElementById('calendar').value
+						const nasaURL = 
+						`https://api.nasa.gov/planetary/apod?api_key=DaqcOV3gTcgPpjd2uQONhFPl4YHiDYvfy87A9ypW&date=${choice}`
+						fetch(nasaURL)
+						.then(res => res.json())
+						.then(data => {
+							if(data.media_type === 'image'){
+								document.getElementById('nasaImg').src = data.hdurl
+								document.getElementById('nasaVid').src = ''
+								document.getElementById('content').textContent = data.explanation
+							}else if(data.media_type === 'video'){
+								document.getElementById('nasaVid').src = data.hdurl
+								document.getElementById(nasaImg).src = ''
+								document.getElementById('content').textContent = data.explanation
+							}
+						})
+						.catch(err => {
+							console.log(`error: ${err}`)
+						})
+					}
 })(jQuery);
+
