@@ -31,7 +31,7 @@
 						<nav>
 							<ul>
 								<li><a href="#intro">POD</a></li>
-								<li><a href="#work">Work</a></li>
+								<li><a href="#work">Rover</a></li>
 								<li><a href="#about">About</a></li>
 								<li><a href="#contact">Contact</a></li>
 								<!--<li><a href="#elements">Elements</a></li>-->
@@ -54,10 +54,23 @@
 
 						<!-- Work -->
 							<article id="work">
-								<h2 class="major">Work</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-								<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
+								<h2 class="major">Rover</h2>
+								<span class="image main"><img src="" alt="" /></span>
+								<p>Welcome to the Mars Rover Photos. Here you can search for Mars photos by camera and sol.</p>
+								<p>Photos are organized by the sol (Martian rotation or day) on which they were taken, counting up from the rover's landing date. A photo taken on Curiosity's 1000th Martian sol exploring Mars, for example, will have a sol attribute of 1000. If instead you prefer to search by the Earth date on which a photo was taken, you can do that, too.</p>
+								<label>Camera</label>
+									<select id="abbreviations" name="cameras">
+										<option disabled selected>Select a Camera</option>
+										<option value="fhaz">FHAZ</option>
+										<option value="rhaz">RHAZ</option>
+										<option value="mast">MAST</option>
+									</select>
+									<div id="lowerSection">
+										<label>SOL</label>
+										<input type='number' id='solSelect'>
+										<button>Get stuff</button>
+									</div>
+									
 							</article>
 
 						<!-- About -->

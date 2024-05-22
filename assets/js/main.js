@@ -406,7 +406,7 @@
 						let currentDate = new Date()
 						let selectedDate = new Date(choice)
 						if(selectedDate > currentDate){
-							document.getElementById('content').innerHTML = `<p style="color:red;">I dont think we've reached that date yet, try again!</p>`;
+							document.getElementById('content').innerHTML = `<p style="color:red;">I dont think we've reached that date yet, select todays date, or an earlier date!</p>`;
 							return;
 						}
 						const nasaURL = 
@@ -422,7 +422,7 @@
 								
 							}else if(data.media_type === 'video'){
 								document.getElementById('nasaVid').src = data.hdurl
-								document.getElementById(nasaImg).src = ''
+								document.getElementById('nasaImg').src = ''
 								document.getElementById('content').textContent = data.explanation
 							}
 						})
