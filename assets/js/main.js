@@ -4,6 +4,9 @@
 	$(document).ready(function(){
 		document.getElementById('pod').addEventListener('click', function(){
 			getPOD();
+		document.getElementById('rover').addEventListener('click', function(){
+			getRover();
+		})
 		})
 	})
 	
@@ -425,6 +428,22 @@
 								document.getElementById('nasaImg').src = ''
 								document.getElementById('content').textContent = data.explanation
 							}
+						})
+						.catch(err => {
+							console.log(`error: ${err}`)
+						})
+					}
+
+
+					function getRover(){
+						let roverSelection = document.getElementById('abbreviations').value
+						let solSelection = document.getElementById('solSelect').value
+						const roverApi = 
+						`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${solSelection}&camera=${roverSelection}&api_key=DaqcOV3gTcgPpjd2uQONhFPl4YHiDYvfy87A9ypW`
+						fetch(roverApi)
+						.then(res => res.json())
+						.then(data => {
+							console.log(data)
 						})
 						.catch(err => {
 							console.log(`error: ${err}`)
