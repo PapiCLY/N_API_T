@@ -4,6 +4,7 @@
 	$(document).ready(function(){
 		document.getElementById('pod').addEventListener('click', function(){
 			getPOD();
+
 		document.getElementById('rover').addEventListener('click', function(){
 			getRover();
 		})
@@ -436,14 +437,20 @@
 
 
 					function getRover(){
+						console.log('clicked')
 						let roverSelection = document.getElementById('abbreviations').value
 						let solSelection = document.getElementById('solSelect').value
+						let roverImg = document.getElementById('roverImg')
+						let paragraphContent = document.getElementById('roverContent')
+						let removeParagraph = document.getElementById('removeContent')
 						const roverApi = 
 						`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${solSelection}&camera=${roverSelection}&api_key=DaqcOV3gTcgPpjd2uQONhFPl4YHiDYvfy87A9ypW`
 						fetch(roverApi)
 						.then(res => res.json())
 						.then(data => {
-							console.log(data)
+							roverImg.src = data.photos[0].img_src
+							paragraphContent.textContent = data.photos[0].camera.full_name
+							removeParagraph.textContent = ''
 						})
 						.catch(err => {
 							console.log(`error: ${err}`)
