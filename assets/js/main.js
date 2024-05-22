@@ -1,7 +1,13 @@
 
 
 (function($) {
-	document.getElementById('pod').addEventListener('click', getPOD)
+	$(document).ready(function(){
+		document.getElementById('pod').addEventListener('click', function(){
+			getPOD();
+		})
+	})
+	
+
 	var	$window = $(window),
 		$body = $('body'),
 		$wrapper = $('#wrapper'),
@@ -393,18 +399,27 @@
 					$window.on('load', function() {
 						$main._show(location.hash.substr(1), true);
 					});
-					
+
 					function getPOD(){
+						
 						const choice = document.getElementById('calendar').value
+						let currentDate = new Date()
+						let selectedDate = new Date(choice)
+						if(selectedDate > currentDate){
+							document.getElementById('content').innerHTML = `<p style="color:red;">I dont think we've reached that date yet, try again!</p>`;
+							return;
+						}
 						const nasaURL = 
 						`https://api.nasa.gov/planetary/apod?api_key=DaqcOV3gTcgPpjd2uQONhFPl4YHiDYvfy87A9ypW&date=${choice}`
 						fetch(nasaURL)
 						.then(res => res.json())
 						.then(data => {
 							if(data.media_type === 'image'){
+								document.getElementById('nasaImg').style.display ='block'
 								document.getElementById('nasaImg').src = data.hdurl
 								document.getElementById('nasaVid').src = ''
 								document.getElementById('content').textContent = data.explanation
+								
 							}else if(data.media_type === 'video'){
 								document.getElementById('nasaVid').src = data.hdurl
 								document.getElementById(nasaImg).src = ''
