@@ -5,9 +5,10 @@
 		document.getElementById('pod').addEventListener('click', function(){
 			getPOD();
 
+		})
+
 		document.getElementById('rover').addEventListener('click', function(){
 			getRover();
-		})
 		})
 	})
 	
@@ -437,7 +438,6 @@
 
 
 					function getRover(){
-						console.log('clicked')
 						let roverSelection = document.getElementById('abbreviations').value
 						let solSelection = document.getElementById('solSelect').value
 						let roverImg = document.getElementById('roverImg')
