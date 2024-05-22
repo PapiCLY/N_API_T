@@ -20,6 +20,23 @@
   	height: 600px;
 }
 
+/*Rover*/
+#sol{
+	margin-bottom: 10px;
+}
+#abbreviations{
+	margin-bottom: 35px;
+}
+
+#solSelect{
+	display: block;
+	background-color: transparent;
+	border-radius: 5px;
+	border: 1px solid white;
+	padding-left: 25px;
+	margin-bottom: 55px;
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
