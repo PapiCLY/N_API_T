@@ -448,9 +448,15 @@
 						fetch(roverApi)
 						.then(res => res.json())
 						.then(data => {
-							roverImg.src = data.photos[0].img_src
-							paragraphContent.textContent = data.photos[0].camera.full_name
-							removeParagraph.textContent = ''
+							if (data.photos && data.photos.length > 0) {
+								roverImg.src = data.photos[0].img_src;
+								paragraphContent.textContent = data.photos[0].camera.full_name;
+								removeParagraph.textContent = '';
+							  } else {
+								roverImg.src = '';
+								paragraphContent.innerHTML = `<p style='color:red;'>No photos found for this Martian Rotation, please enter a different number.</p>`;
+								removeParagraph.textContent = '';
+							  }
 						})
 						.catch(err => {
 							console.log(`error: ${err}`)
