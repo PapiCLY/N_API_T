@@ -17,8 +17,8 @@
 
 @media (max-width: 768px) {
 	.material-symbols-outlined {
-	  font-size: 40px !important; 
-	  vertical-align: -0.2em; 
+	  font-size: 50px !important; 
+	  vertical-align: -0.3em; 
 	}
   }
   
@@ -26,7 +26,7 @@
   @media (max-width: 480px) {
 	.material-symbols-outlined {
 	  font-size: 30px !important; 
-	  vertical-align: -0.1em; 
+	  vertical-align: -0.2em; 
 	}
   }
 
