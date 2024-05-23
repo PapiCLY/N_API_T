@@ -23,8 +23,11 @@
 	place-items: center;
 }
 #calendar{
-	color: black;
-
+	display: block;
+	background-color: transparent;
+	border-radius: 5px;
+	border: 1px solid white;
+	padding-left: 25px;
 }
 
 #nasaImg{
@@ -48,6 +51,17 @@
 	border: 1px solid white;
 	padding-left: 25px;
 	margin-bottom: 55px;
+}
+
+/*EPIC*/
+
+#earthCalendar{
+	display: block;
+	background-color: transparent;
+	border-radius: 5px;
+	border: 1px solid white;
+	padding-left: 25px;
+	margin-bottom: 25px;
 }
 
 html, body, div, span, applet, object,
