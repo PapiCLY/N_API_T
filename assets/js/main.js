@@ -476,10 +476,11 @@
 						.then(data => {
 						  if(data.length > 0){
 							  let image = data[0].image
+							  document.getElementById('epic').textContent = data[0].caption
 							  getImage(image, date)
 						  } else{
 							  console.log('no image found')
-							  document.getElementById('epic').textContent = 'No image found for the provided date';
+							  document.getElementById('epic').innerHTML = `<p style='color:red;'>Sorry, looks like NASA hasn't included an image for that date yet. Try another date please.</p>`;
 						  }
 						})
 						.catch(err =>{
