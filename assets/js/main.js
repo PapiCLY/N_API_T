@@ -430,7 +430,7 @@
 								document.getElementById('content').textContent = data.explanation
 								
 							}else if(data.media_type === 'video'){
-								document.getElementById('nasaVid').src = data.hdurl
+								document.getElementById('nasaVid').src = data.url
 								document.getElementById('nasaImg').src = ''
 								document.getElementById('content').textContent = data.explanation
 							}

@@ -53,6 +53,27 @@
   	height: 600px;
 }
 
+#nasaVid{
+	height: 400px;
+	width: 600px;
+}
+
+
+@media (max-width: 768px) {
+	#nasaVid {
+	  width: 100%; 
+	  height: auto; 
+	}
+  }
+  
+
+  @media (max-width: 480px) {
+	#nasaVid {
+	  width: 100%; 
+	  height: auto; 
+	}
+  }
+
 /*Rover*/
 #sol{
 	margin-bottom: 10px;
