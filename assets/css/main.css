@@ -14,21 +14,22 @@
   vertical-align: -0.3em;
 }
 
-/* Media query for smaller screens */
+
 @media (max-width: 768px) {
 	.material-symbols-outlined {
-	  font-size: 40px !important; /* Adjust the size as needed for smaller screens */
-	  vertical-align: -0.2em; /* Adjust the vertical alignment as needed */
+	  font-size: 40px !important; 
+	  vertical-align: -0.2em; 
 	}
   }
   
-  /* Media query for even smaller screens */
+  
   @media (max-width: 480px) {
 	.material-symbols-outlined {
-	  font-size: 30px !important; /* Adjust the size as needed for even smaller screens */
-	  vertical-align: -0.1em; /* Adjust the vertical alignment as needed */
+	  font-size: 30px !important; 
+	  vertical-align: -0.1em; 
 	}
   }
+
 
 /* POD*/
 #pod{
