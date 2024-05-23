@@ -10,6 +10,10 @@
 		document.getElementById('rover').addEventListener('click', function(){
 			getRover();
 		})
+
+		document.getElementById('epicBtn').addEventListener('click', function(){
+			getEpic();
+		})
 	})
 	
 
@@ -462,5 +466,44 @@
 							console.log(`error: ${err}`)
 						})
 					}
+
+					function getEpic(){
+						let date = document.getElementById('earthCalendar').value
+						const roverApi = `https://api.nasa.gov/EPIC/api/natural/date/${date}?api_key=DaqcOV3gTcgPpjd2uQONhFPl4YHiDYvfy87A9ypW`
+					  
+						fetch(roverApi)
+						.then(res => res.json())
+						.then(data => {
+						  if(data.length > 0){
+							  let image = data[0].image
+							  getImage(image, date)
+						  } else{
+							  console.log('no image found')
+							  document.getElementById('epic').textContent = 'No image found for the provided date';
+						  }
+						})
+						.catch(err =>{
+						  console.log(`error: ${err}`)
+						})
+						
+					  getImage(image, date)
+					  }
+					  
+						function getImage(image, date){
+						  const finalImageURL = `https://api.nasa.gov/EPIC/archive/natural/${date.replace(/-/g, '/')}/png/${image}.png?api_key=DaqcOV3gTcgPpjd2uQONhFPl4YHiDYvfy87A9ypW`;
+					  
+						fetch(finalImageURL)
+						  .then(res => res.blob())
+						  .then(blob => {
+							  let imageURL = URL.createObjectURL(blob)
+						  console.log(`Image URL:`, imageURL)
+					  
+						  document.getElementById('epicImg').src = imageURL;
+							//document.getElementById('roverContent').textContent = 'Image successfully loaded';
+						})
+						  .catch(err =>{
+						  console.log(`error: ${err}`)
+						})
+					  }
 })(jQuery);
 
